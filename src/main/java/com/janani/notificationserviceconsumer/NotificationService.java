@@ -7,7 +7,8 @@ import org.springframework.stereotype.Component;
 public class NotificationService {
 
 	@RabbitListener(queues = "${jsa.rabbitmq.queue}")
-	public void recievedOrder(String msg) {
-		System.out.println("Recieved Order: " + msg);
+	public void recievedOrder(Order order) {
+		System.out.println("Listener is called");
+		System.out.println("Recieved Order: " + order);
 	}
 }
